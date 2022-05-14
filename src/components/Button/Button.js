@@ -1,16 +1,27 @@
-export default function Button ({cardIndex, cards,  setCards, ...otherProps}) {
+import Answer from "./Answer";
+import start from "../../Assets/imgs/start.svg"
+import flip from "../../Assets/imgs/setinha.png";
 
-    let changeCard = [...cards]
-    function changeStep(){
-        changeCard[cardIndex]["cardStep"] = 1;
-        setCards(changeCard)
-    }
+
+export default function Button({ cardIndex, cards, setCards, ...otherProps }) {
+
+    const { answers } = { ...otherProps };
+    let changeValue = [...cards]
     
-    console.log(changeCard);
-    return(
-        <div className={`button`} onClick={() => changeStep()}>
-            botão
+    function changeCard() {
+        let cardStep = changeValue[cardIndex]["cardStep"];
+        changeValue[cardIndex]["cardStep"] += 1;
+        if (cardStep === 2) changeValue[cardIndex]["cardStep"] = 0;
+        setCards(changeValue);
+    }
+
+    const img = changeValue[cardIndex]["cardStep"] === 0 ? start : flip;
+
+    return (
+        <div onClick={() => changeCard()}>
+            {changeValue[cardIndex]["cardStep"] > 1 ?
+                answers.map((answer) => <Answer value={answer.text} color={answer.color} setCards={setCards} />) :
+                <Answer value={img} type={"img"} />}
         </div>
-        
     );
 }

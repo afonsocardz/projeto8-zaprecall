@@ -12,7 +12,7 @@ export default function App (){
     {
         question:"O React é __",
         answer: "uma biblioteca JavaScript para construção de interfaces",
-        cardStep: 0,
+        cardStep: 2,
         option: false
     },
     {
