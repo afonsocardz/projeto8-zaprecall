@@ -1,6 +1,8 @@
 import React from "react"
 import Home from "./pages/Home"
 import Zap from "./pages/Zap"
+import "./Assets/css/reset.css"
+import "./Assets/css/style.css"
 
 export default function App (){
     const objCards = [{

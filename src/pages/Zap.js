@@ -1,24 +1,31 @@
 import React from "react";
 import Logo from "../components/Logo";
-import logoSmall from "../Assets/imgs/logo-pequeno.png"
 import Card from "../components/Card/Card";
 import Button from "../components/Button/Button";
+import Footer from "../components/Footer/Footer";
+import logoSmall from "../Assets/imgs/logo-pequeno.png";
+import question from "../Assets/imgs/question.svg";
+import wrong from "../Assets/imgs/wrong.svg";
+import right from "../Assets/imgs/right.svg";
 
 
 export default function Zap({ cards, setCards }) {
 
     const objAnswers = [
         {
-            text: "Difícil",
-            color: "red"
+            text: "Não lembrei",
+            color: "red",
+            icon: wrong
         },
         {
-            text: "Médio",
-            color: "yellow"
+            text: "Quase não lembrei",
+            color: "yellow",
+            icon: question
         },
         {
-            text: "Fácil",
-            color: "green"
+            text: "Zap!",
+            color: "green",
+            icon: right
         }
     ];
     //const [answers, setAnswers] = React.useState(objAnswers);    
@@ -35,6 +42,10 @@ export default function Zap({ cards, setCards }) {
                     <Button cardIndex={index} cards={cards} setCards={setCards} answers={objAnswers} />
                 </Card>)
             }
+
+            <Footer cards={cards} answers={objAnswers}>
+                {cards.map(card => <img src={card.option} alt="icon"/>)}
+            </Footer>
         </>
     );
 }

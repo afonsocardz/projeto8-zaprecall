@@ -1,0 +1,39 @@
+.card.\0031 > .button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button > span{
+    width: 85.17px;
+    height: 37.17px;
+    font-size: 12px;
+    line-height: 14.4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    color: white;
+}
+
+.button.red{
+    background-color: red;
+}
+
+.button.yellow{
+    background-color: yellow;
+}
+
+.button.green{
+    background-color: green;
+}
