@@ -9,19 +9,22 @@ export default function App (){
         question: "O que é JSX?",
         answer: "Uma extensão de linguagem do JavaScript",
         cardStep: 0,
-        option: false
+        option: false,
+        color:false
     },
     {
         question:"O React é __",
         answer: "uma biblioteca JavaScript para construção de interfaces",
-        cardStep: 2,
-        option: false
+        cardStep: 0,
+        option: false,
+        color:false
     },
     {
         question: "Componentes devem iniciar com __",
         answer: "letra maiúscula",
         cardStep: 0,
-        option: false
+        option: false,
+        color:false
     }];
     const [init, setInit] = React.useState(false);
     const [cards, setCards] = React.useState(objCards);

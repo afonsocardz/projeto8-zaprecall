@@ -1,0 +1,46 @@
+
+.footer{
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding:5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer > *{
+    margin: 3px 0;
+}
+
+.footer div:last-child{
+    margin-bottom: 0;
+}
+
+.footer .final-msg{
+    width: 299px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.final-msg > * {
+    margin-bottom:8px;
+}
+
+.final-msg .title{
+    margin-top: 4px;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+}
+
+.answers img{
+    margin: 0 2.5px 0 2.5px;
+}

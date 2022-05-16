@@ -1,16 +1,18 @@
-import Logo from "../components/Logo";
-import LogoImg from "../Assets/imgs/logo.png"
+import Logo from "../components/Logo/Logo";
+import LogoImg from "../Assets/imgs/logo.svg"
+
+import "../Assets/css/style.css"
 
 
 export default function Home({setInit}) {
     return (
-        <>
-            <Logo>
+        <div className="home">
+            <Logo logoType="logo-main">
                 <img src={LogoImg} alt="Logo"/>
-                <h2>Zap Recall</h2>
+                <span>ZapRecall</span>
             </Logo>
-            <button onClick={() => setInit(true)}>Começa ai!</button>
-        </>
+            <button onClick={() => setInit(true)}>Iniciar Recall!</button>
+        </div>
 
     );
 }

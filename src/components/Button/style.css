@@ -27,13 +27,13 @@
 }
 
 .button.red{
-    background-color: red;
+    background-color: rgba(255, 48, 48, 1);
 }
 
 .button.yellow{
-    background-color: yellow;
+    background-color: rgba(255, 146, 46, 1);
 }
 
 .button.green{
-    background-color: green;
+    background-color: rgba(47, 190, 52, 1);
 }

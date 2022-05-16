@@ -6,16 +6,20 @@ import './style.css'
 
 export default function Button({ cardIndex, cards, setCards, ...otherProps }) {
 
-    const { answers } = { ...otherProps };
+    const { answers, setAnswers, orderedAnswers } = { ...otherProps };
     let changeValue = [...cards]
     console.log(cards);
 
-    function changeCard(icon = false) {
+    function changeCard(icon = false, color) {
         let cardStep = changeValue[cardIndex]["cardStep"];
 
         icon ? changeValue[cardIndex]["option"] = icon : changeValue[cardIndex]["cardStep"] += 1;;
 
-        if (cardStep === 2) changeValue[cardIndex]["cardStep"] = 0;
+        if (cardStep === 2) {
+            changeValue[cardIndex]["color"] = color;
+            changeValue[cardIndex]["cardStep"] = 0;
+            setAnswers([...orderedAnswers, icon])
+        }
 
         setCards(changeValue);
     }
@@ -28,8 +32,11 @@ export default function Button({ cardIndex, cards, setCards, ...otherProps }) {
 
         ;
 
+
+
+
     return (
-        <div className="button-container" onClick={() => changeCard()}>
+        <div className="button-container" onClick={changeValue[cardIndex]["cardStep"] !== 2 ? () => changeCard() : undefined}>
             {changeValue[cardIndex]["cardStep"] > 1 ?
                 answers.map((answer, index) => <Answer cardIndex={cardIndex} index={index} value={answer.text} color={answer.color} icon={answer.icon} changeCard={changeCard} />) :
                 <Answer value={icon} type={"img"} />

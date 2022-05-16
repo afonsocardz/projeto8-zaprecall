@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../components/Logo";
+import Logo from "../components/Logo/Logo";
 import Card from "../components/Card/Card";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
@@ -28,23 +28,28 @@ export default function Zap({ cards, setCards }) {
             icon: right
         }
     ];
-    //const [answers, setAnswers] = React.useState(objAnswers);    
+
+    const [answers, setAnswers] = React.useState([]);
 
     return (
         <>
-            <Logo>
+            <Logo logoType="logo-small">
                 <img src={logoSmall} alt="Logo" />
-                <h3>Zap Recall</h3>
+                <span>Zap Recall</span>
             </Logo>
+            <div className="cards-container">
+                {cards.map((card, index) =>
+                    <Card cardColor={card.color} cardStep={card.cardStep} cardQuestion={card.question} cardAnswer={card.answer} cardIndex={index} >
+                        <Button cardIndex={index} cards={cards} setCards={setCards} answers={objAnswers} setAnswers={setAnswers} orderedAnswers={answers} />
+                    </Card>)
+                }
+            </div>
 
-            {cards.map((card, index) =>
-                <Card cardStep={card.cardStep} cardQuestion={card.question} cardAnswer={card.answer} cardIndex={index}>
-                    <Button cardIndex={index} cards={cards} setCards={setCards} answers={objAnswers} />
-                </Card>)
-            }
 
             <Footer cards={cards} answers={objAnswers}>
-                {cards.map(card => <img src={card.option} alt="icon"/>)}
+                <div className="answers">
+                    {answers.map(answer => <img src={answer} alt="icon" />)}
+                </div>
             </Footer>
         </>
     );

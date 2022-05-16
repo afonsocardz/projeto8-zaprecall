@@ -1,0 +1,40 @@
+.logo{
+    font-family: 'Righteous', cursive;
+    color:white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-small{
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-small span{
+    font-size: 36px;
+}
+
+.logo-small img{
+    height: 60px;
+    margin-right: 15px;
+}
+
+.logo-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-main span{
+    font-size: 36px;
+    padding: 10px;
+    margin-top: 13px;
+}
+
+.logo-main img{
+    width: 136px;
+    height: 161px;
+}
